@@ -1,0 +1,1 @@
+.home{display:grid;grid-template-columns:1fr 1fr;max-width:800px;margin:0 auto;justify-items:center;grid-gap:20px}.block-item{padding:30px;background:rgba(0,0,0,.1)}ul{margin:0;padding:0;list-style:none}ul>*{font-size:16px;line-height:1.8}ul a{text-decoration:none}

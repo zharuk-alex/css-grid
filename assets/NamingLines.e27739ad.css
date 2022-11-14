@@ -1,0 +1,1 @@
+.container[data-v-32b21c15]{display:grid;grid-gap:18px;border:10px solid yellow;grid-template-columns:[site-left] 1fr [content-start] 500px [content-end] 1fr [site-right];grid-template-rows:[content-top] repeat(10,auto) [content-bottom]}.item3[data-v-32b21c15]{background:slateblue;grid-column:content-start;grid-row:content-top / content-bottom}
