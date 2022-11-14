@@ -13,10 +13,10 @@
       :ref="`gallery__item_${index}`"
       class="gallery__item"
       :key="index"
-      :class="`h${item[0]} v${item[1]}`"
+      :class="item.classes"
       @click="showOverlay(index)"
     >
-      <img :src="`../../src/assets/gallery/${RandomNumber(12)}.jpg`" />
+      <img :src="item.src" />
       <div class="item__overlay">
         <button>View →</button>
       </div>
@@ -29,13 +29,25 @@
     data: () => ({
       overlayImage: null,
       overlay: false,
+      limit: 12,
     }),
     computed: {
       digits() {
-        return Array.from({ length: 50 }, () => [
-          this.RandomNumber(4),
-          this.RandomNumber(4),
-        ]).concat(Array.from({ length: 15 }, () => [1, 1]));
+        return Array.from({ length: 50 }, () => ({
+          classes: `h${this.RandomNumber(4)} v${this.RandomNumber(4)}`,
+          src: new URL(
+            `/src/assets/gallery/${this.RandomNumber(this.limit)}.jpg`,
+            import.meta.url
+          ).href,
+        })).concat(
+          Array.from({ length: 15 }, () => ({
+            classes: `h1 v1`,
+            src: new URL(
+              `/src/assets/gallery/${this.RandomNumber(this.limit)}.jpg`,
+              import.meta.url
+            ).href,
+          }))
+        );
       },
     },
     methods: {
